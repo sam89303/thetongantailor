@@ -322,6 +322,7 @@ h1, h2, h3, p, blockquote, figure { margin: 0; }
 /* Photo-banner sections (Weddings / Jackets / Suits) */
 .photo-banner {
   position: relative;
+  width: 100%;
   aspect-ratio: 16 / 9;
   max-height: 60vh;
   overflow: hidden;
