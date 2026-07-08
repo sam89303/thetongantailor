@@ -332,7 +332,7 @@ h1, h2, h3, p, blockquote, figure { margin: 0; }
   object-fit: cover;
   object-position: top center;
 }
-#suits .photo-banner img {
+#event .photo-banner img {
   object-position: center;
 }
 .photo-banner-fade {
