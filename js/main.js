@@ -50,16 +50,3 @@ document.querySelectorAll('.hero-media img, .photo-banner img, .story-strip img'
     img.style.display = 'none';
   });
 });
-
-// Story strip: grayscale-to-color is hover-driven on desktop (pure CSS).
-// On touch devices there's no hover, so tapping toggles the color state instead.
-if (!window.matchMedia('(hover: hover)').matches) {
-  const storyImgs = document.querySelectorAll('.story-strip img');
-  storyImgs.forEach((img) => {
-    img.addEventListener('click', () => {
-      const wasActive = img.classList.contains('is-active');
-      storyImgs.forEach((i) => i.classList.remove('is-active'));
-      if (!wasActive) img.classList.add('is-active');
-    });
-  });
-}
