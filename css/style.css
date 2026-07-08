@@ -382,6 +382,12 @@ h1, h2, h3, p, blockquote, figure { margin: 0; }
   width: auto;
   border-radius: 3px;
   border: 1px solid var(--border-hairline);
+  filter: grayscale(1);
+  transition: filter 0.35s ease;
+}
+.story-strip img:hover,
+.story-strip img.is-active {
+  filter: grayscale(0);
 }
 
 .story-follow {
