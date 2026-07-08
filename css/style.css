@@ -394,6 +394,22 @@ h1, h2, h3, p, blockquote, figure { margin: 0; }
 .section-book { text-align: center; }
 .section-book .btn { margin-top: 0.5rem; }
 
+.map-embed {
+  max-width: 640px;
+  margin: 3rem auto 0;
+  border: 1px solid var(--border-hairline);
+  overflow: hidden;
+  filter: grayscale(1) contrast(1.15) brightness(0.85);
+}
+.map-embed iframe { display: block; }
+.map-address {
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   padding-top: 1.5rem;
