@@ -338,7 +338,7 @@ h1, h2, h3, p, blockquote, figure { margin: 0; }
 /* ---------- Sections (general) ---------- */
 .section { position: relative; }
 
-/* Photo-banner sections (Weddings / Jackets / Suits) */
+/* Photo-banner sections (Prince Range / King Range / Events) */
 .photo-banner {
   position: relative;
   width: 100%;
@@ -347,7 +347,19 @@ h1, h2, h3, p, blockquote, figure { margin: 0; }
   overflow: hidden;
   background: var(--bg);
 }
-.photo-banner img {
+.photo-banner-blur {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(30px) brightness(0.4) saturate(1.15);
+  transform: scale(1.15);
+  z-index: 0;
+}
+.photo-banner-fg {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -356,6 +368,7 @@ h1, h2, h3, p, blockquote, figure { margin: 0; }
 .photo-banner-fade {
   position: absolute;
   inset: 0;
+  z-index: 2;
   background: linear-gradient(to bottom, rgba(10,10,10,0) 60%, var(--bg) 100%);
 }
 
