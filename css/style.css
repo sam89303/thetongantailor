@@ -451,6 +451,57 @@ h1, h2, h3, p, blockquote, figure { margin: 0; }
   max-width: 65ch;
 }
 
+/* Events — small occasion dropdowns */
+.occasion-list {
+  margin-top: 2rem;
+  max-width: 560px;
+  border-top: 1px solid var(--border-hairline);
+}
+.occasion-item {
+  border-bottom: 1px solid var(--border-hairline);
+}
+.occasion-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.occasion-item summary::-webkit-details-marker { display: none; }
+.occasion-item summary::after {
+  content: "+";
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--accent);
+  flex-shrink: 0;
+  display: inline-block;
+  transition: transform 0.25s var(--ease);
+}
+.occasion-item[open] summary::after { transform: rotate(45deg); }
+.occasion-item p {
+  margin: 0;
+  padding: 0 2rem 1.25rem 0;
+  color: var(--text);
+  opacity: 0.8;
+  font-size: 0.9rem;
+  max-width: 60ch;
+}
+.occasion-photo {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  border: 1px solid var(--border-hairline);
+  margin: 0 0 1rem;
+}
+
 /* Book */
 .section-book { text-align: center; }
 .section-book .btn { margin-top: 0.5rem; }
@@ -549,6 +600,7 @@ h1, h2, h3, p, blockquote, figure { margin: 0; }
   opacity: 0.8;
   margin-bottom: 1.75rem;
 }
+.pricing-line--inline { margin-bottom: 1.5rem; }
 
 /* ---------- Footer ---------- */
 .site-footer {
