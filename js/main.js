@@ -50,3 +50,33 @@ document.querySelectorAll('.hero-media img, .photo-banner img, .story-strip img'
     img.style.display = 'none';
   });
 });
+
+// Booking form — submit to Netlify Forms via fetch, no page reload
+const bookingForm = document.getElementById('bookingForm');
+const bookingStatus = document.getElementById('bookingFormStatus');
+
+if (bookingForm) {
+  bookingForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(bookingForm);
+    bookingStatus.textContent = 'Sending…';
+    bookingStatus.className = 'form-status';
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        bookingForm.reset();
+        bookingStatus.textContent = "Thanks — we'll be in touch shortly to confirm your fitting.";
+        bookingStatus.classList.add('is-success');
+      })
+      .catch(() => {
+        bookingStatus.textContent = 'Something went wrong. Please email sam@richardbowman.com.au directly.';
+        bookingStatus.classList.add('is-error');
+      });
+  });
+}

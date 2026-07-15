@@ -130,12 +130,45 @@
   <!-- BOOK NOW -->
   <section class="section section-book" id="book">
     <div class="section-inner reveal centered">
+      <p class="eyebrow">Book a Fitting</p>
       <h2 class="display-md">Ready when you are.</h2>
       <p class="body-md centered">Fittings by appointment, Sydney and regional NSW. Tell us the occasion and we'll find a time.</p>
-      <a class="btn btn-primary"
-         href="mailto:sam@richardbowman.com.au?subject=Fitting%20Enquiry&body=Name%3A%0APreferred%20date%3A%0AOccasion%20(wedding%20%2F%20event%20%2F%20everyday)%3A%0A">
-        Book a Fitting
-      </a>
+
+      <form name="book-fitting" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="booking-form" id="bookingForm">
+        <input type="hidden" name="form-name" value="book-fitting" />
+        <p class="visually-hidden">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+
+        <div class="form-row form-row-full">
+          <label for="bf-name">Name</label>
+          <input type="text" id="bf-name" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-row form-row-full">
+          <label for="bf-email">Email</label>
+          <input type="email" id="bf-email" name="email" placeholder="name@email.com" required />
+        </div>
+        <div class="form-row">
+          <label for="bf-occasion">Occasion</label>
+          <select id="bf-occasion" name="occasion">
+            <option>Wedding</option>
+            <option>Event</option>
+            <option>Everyday</option>
+            <option>Bulk / club order</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="bf-date">Preferred date</label>
+          <input type="date" id="bf-date" name="preferred_date" />
+        </div>
+        <div class="form-row form-row-full">
+          <label for="bf-message">Anything else</label>
+          <textarea id="bf-message" name="message" rows="3" placeholder="Tell us a bit about what you need"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Book a Fitting</button>
+        <p class="form-status" id="bookingFormStatus" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 
