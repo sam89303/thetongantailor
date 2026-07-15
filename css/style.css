@@ -416,7 +416,9 @@ h1, h2, h3, p, blockquote, figure { margin: 0; }
 }
 
 .story-follow {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   width: fit-content;
   margin: 0 auto;
 }
@@ -636,6 +638,9 @@ h1, h2, h3, p, blockquote, figure { margin: 0; }
   gap: 1rem;
 }
 .footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-family: var(--font-mono);
   font-size: 0.85rem;
   letter-spacing: 0.04em;
@@ -643,6 +648,8 @@ h1, h2, h3, p, blockquote, figure { margin: 0; }
   transition: color 0.2s var(--ease);
 }
 .footer-social:hover { color: var(--text); }
+
+.icon-instagram { flex-shrink: 0; }
 
 .footer-fine {
   text-align: center;
