@@ -408,6 +408,49 @@ h1, h2, h3, p, blockquote, figure { margin: 0; }
   margin: 0 auto;
 }
 
+/* FAQ */
+.faq-list {
+  margin-top: 2.5rem;
+  max-width: 760px;
+  border-top: 1px solid var(--border-hairline);
+}
+.faq-item {
+  border-bottom: 1px solid var(--border-hairline);
+}
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--accent);
+  flex-shrink: 0;
+  display: inline-block;
+  transition: transform 0.25s var(--ease);
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p {
+  margin: 0;
+  padding: 0 2.5rem 1.5rem 0;
+  color: var(--text);
+  opacity: 0.8;
+  font-size: 0.95rem;
+  max-width: 65ch;
+}
+
 /* Book */
 .section-book { text-align: center; }
 .section-book .btn { margin-top: 0.5rem; }
